@@ -1,0 +1,30 @@
+{
+  "name": "ui",
+  "description": "Shared UI components",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Raptoria",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "watch": "tsc -w",
+    "test": "NODE_ENV=unittest pnpm jest",
+    "lint": "pnpm eslint --ext .js,.jsx,.ts,.tsx ./",
+    "prepublishOnly": "pnpm run-s lint test build"
+  },
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "typescript": "^5.6.3",
+    "nativewind": "4.1.10"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "clsx": "^2.1.1",
+    "react-native-css-interop": "0.0.0-20240828112338"
+  }
+}
